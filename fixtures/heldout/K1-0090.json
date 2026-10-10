@@ -1,0 +1,568 @@
+{
+  "synthetic_only": true,
+  "planted_defects": [],
+  "document": {
+    "document_id": "K1-0090",
+    "tax_year": null,
+    "tax_year_confidence": 0.0,
+    "synthetic": true,
+    "variant": "prose",
+    "layout_recognized": false,
+    "part_i": {
+      "ein": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "A Partnership EIN",
+          "extractor": "deterministic"
+        }
+      },
+      "name": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "B Partnership name",
+          "extractor": "deterministic"
+        }
+      },
+      "street": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "B Partnership street",
+          "extractor": "deterministic"
+        }
+      },
+      "city": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "B Partnership city",
+          "extractor": "deterministic"
+        }
+      },
+      "state": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "B Partnership state",
+          "extractor": "deterministic"
+        }
+      },
+      "zip_code": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "B Partnership ZIP",
+          "extractor": "deterministic"
+        }
+      },
+      "irs_center": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "C IRS center",
+          "extractor": "deterministic"
+        }
+      },
+      "is_ptp": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "D PTP",
+          "extractor": "deterministic"
+        }
+      }
+    },
+    "part_ii": {
+      "tin": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "E Partner TIN",
+          "extractor": "deterministic"
+        }
+      },
+      "name": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "F Partner name",
+          "extractor": "deterministic"
+        }
+      },
+      "street": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "F Partner street",
+          "extractor": "deterministic"
+        }
+      },
+      "city": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "F Partner city",
+          "extractor": "deterministic"
+        }
+      },
+      "state": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "F Partner state",
+          "extractor": "deterministic"
+        }
+      },
+      "zip_code": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "F Partner ZIP",
+          "extractor": "deterministic"
+        }
+      },
+      "is_general_partner": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "G General partner",
+          "extractor": "deterministic"
+        }
+      },
+      "is_domestic": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "H1 Domestic partner",
+          "extractor": "deterministic"
+        }
+      },
+      "entity_type": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "I1 Entity type",
+          "extractor": "deterministic"
+        }
+      },
+      "is_retirement_plan": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "I2 Retirement plan",
+          "extractor": "deterministic"
+        }
+      },
+      "profit_beginning": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "J Profit beginning pct",
+          "extractor": "deterministic"
+        }
+      },
+      "profit_ending": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "J Profit ending pct",
+          "extractor": "deterministic"
+        }
+      },
+      "loss_beginning": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "J Loss beginning pct",
+          "extractor": "deterministic"
+        }
+      },
+      "loss_ending": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "J Loss ending pct",
+          "extractor": "deterministic"
+        }
+      },
+      "capital_share_beginning": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "J Capital beginning pct",
+          "extractor": "deterministic"
+        }
+      },
+      "capital_share_ending": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "J Capital ending pct",
+          "extractor": "deterministic"
+        }
+      },
+      "liability_nonrecourse": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "K Nonrecourse",
+          "extractor": "deterministic"
+        }
+      },
+      "liability_qualified_nonrecourse": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "K Qualified nonrecourse",
+          "extractor": "deterministic"
+        }
+      },
+      "liability_recourse": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "K Recourse",
+          "extractor": "deterministic"
+        }
+      },
+      "capital_method": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "L Capital method",
+          "extractor": "deterministic"
+        }
+      },
+      "capital": {
+        "beginning": {
+          "value": null,
+          "confidence": 0.0,
+          "provenance": {
+            "page": null,
+            "bbox": null,
+            "field_name": "L Beginning capital",
+            "extractor": "deterministic"
+          }
+        },
+        "contributed": {
+          "value": null,
+          "confidence": 0.0,
+          "provenance": {
+            "page": null,
+            "bbox": null,
+            "field_name": "L Capital contributed",
+            "extractor": "deterministic"
+          }
+        },
+        "current_year_net_income": {
+          "value": null,
+          "confidence": 0.0,
+          "provenance": {
+            "page": null,
+            "bbox": null,
+            "field_name": "L Current year net income",
+            "extractor": "deterministic"
+          }
+        },
+        "other_increase_decrease": {
+          "value": null,
+          "confidence": 0.0,
+          "provenance": {
+            "page": null,
+            "bbox": null,
+            "field_name": "L Other increase decrease",
+            "extractor": "deterministic"
+          }
+        },
+        "withdrawals": {
+          "value": null,
+          "confidence": 0.0,
+          "provenance": {
+            "page": null,
+            "bbox": null,
+            "field_name": "L Withdrawals and distributions",
+            "extractor": "deterministic"
+          }
+        },
+        "ending": {
+          "value": null,
+          "confidence": 0.0,
+          "provenance": {
+            "page": null,
+            "bbox": null,
+            "field_name": "L Ending capital",
+            "extractor": "deterministic"
+          }
+        }
+      },
+      "contributed_builtin_gain": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "M Built-in gain property",
+          "extractor": "deterministic"
+        }
+      }
+    },
+    "part_iii": {
+      "ordinary_business_income": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "1 Ordinary business income",
+          "extractor": "deterministic"
+        }
+      },
+      "net_rental_real_estate": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "2 Net rental real estate income",
+          "extractor": "deterministic"
+        }
+      },
+      "other_net_rental": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "3 Other net rental income",
+          "extractor": "deterministic"
+        }
+      },
+      "guaranteed_payments_services": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "4a Guaranteed payments for services",
+          "extractor": "deterministic"
+        }
+      },
+      "guaranteed_payments_capital": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "4b Guaranteed payments for capital",
+          "extractor": "deterministic"
+        }
+      },
+      "guaranteed_payments_total": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "4c Total guaranteed payments",
+          "extractor": "deterministic"
+        }
+      },
+      "interest_income": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "5 Interest income",
+          "extractor": "deterministic"
+        }
+      },
+      "ordinary_dividends": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "6a Ordinary dividends",
+          "extractor": "deterministic"
+        }
+      },
+      "qualified_dividends": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "6b Qualified dividends",
+          "extractor": "deterministic"
+        }
+      },
+      "dividend_equivalents": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "6c Dividend equivalents",
+          "extractor": "deterministic"
+        }
+      },
+      "royalties": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "7 Royalties",
+          "extractor": "deterministic"
+        }
+      },
+      "net_short_term_capital_gain": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "8 Net short-term capital gain",
+          "extractor": "deterministic"
+        }
+      },
+      "net_long_term_capital_gain": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "9a Net long-term capital gain",
+          "extractor": "deterministic"
+        }
+      },
+      "collectibles_gain": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "9b Collectibles gain",
+          "extractor": "deterministic"
+        }
+      },
+      "unrecaptured_1250_gain": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "9c Unrecaptured section 1250 gain",
+          "extractor": "deterministic"
+        }
+      },
+      "net_section_1231_gain": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "10 Net section 1231 gain",
+          "extractor": "deterministic"
+        }
+      },
+      "other_income": [],
+      "section_179_deduction": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "12 Section 179 deduction",
+          "extractor": "deterministic"
+        }
+      },
+      "other_deductions": [],
+      "self_employment": [],
+      "credits": [],
+      "schedule_k3_attached": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "16 Schedule K-3 attached",
+          "extractor": "deterministic"
+        }
+      },
+      "amt_items": [],
+      "tax_exempt_and_nondeductible": [],
+      "distributions": [],
+      "other_information": [],
+      "foreign_taxes_paid": {
+        "value": null,
+        "confidence": 0.0,
+        "provenance": {
+          "page": null,
+          "bbox": null,
+          "field_name": "21 Foreign taxes paid or accrued",
+          "extractor": "deterministic"
+        }
+      }
+    }
+  }
+}

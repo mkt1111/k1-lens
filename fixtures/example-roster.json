@@ -1,0 +1,23 @@
+{
+  "note": "Obviously synthetic. EINs use the 00- prefix and SSNs use 000-. These numbers are not issued by the IRS or SSA. No real people. This file is an example input. Eval does not load it unless you pass --roster.",
+  "partnerships": [
+    {
+      "name": "SAMPLE Northwind Test Partnership",
+      "ein": "00-9000001",
+      "street": "1 Synthetic Way",
+      "city": "Testville",
+      "state": "OR",
+      "zip": "97201-1234"
+    }
+  ],
+  "investors": [
+    {
+      "name": "SAMPLE Alex Example",
+      "tin": "000-90-0001",
+      "street": "2 Synthetic Way",
+      "city": "Testville",
+      "state": "OR",
+      "zip": "97201"
+    }
+  ]
+}

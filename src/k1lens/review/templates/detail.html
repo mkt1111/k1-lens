@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}{{ record.document_id }} · K1-Lens{% endblock %}
+{% block body %}
+<section class="panel">
+  <div class="panel-head split">
+    <div>
+      <p class="crumb"><a href="/">Queue</a> / {{ record.document_id }}</p>
+      <h1>{{ record.document_id }}</h1>
+      <p>
+        <span class="pill">{{ record.variant }}</span>
+        {% if not record.document.layout_recognized %}
+        <span class="pill unrecognized">Unrecognized layout</span>
+        {% endif %}
+        <span class="pill status-{{ record.status }}">{{ record.status }}</span>
+        {% if record.document.tax_year %}{{ record.document.tax_year }}{% else %}Year not extracted{% endif %}
+        · {{ error_count }} error{% if error_count != 1 %}s{% endif %}
+        · {{ warning_count }} warning{% if warning_count != 1 %}s{% endif %}
+      </p>
+    </div>
+    <form class="approve" method="post" action="/documents/{{ record.document_id }}/approve">
+      <label for="reviewer">Reviewer</label>
+      <input id="reviewer" name="actor" value="" placeholder="Your name" autocomplete="name" required>
+      <button type="submit">Approve</button>
+    </form>
+  </div>
+  {% if not record.document.layout_recognized %}
+  <p class="banner unrecognized">Unrecognized layout. Every field is below the review threshold and needs a person to check it. Nothing on this page was confirmed automatically.</p>
+  {% endif %}
+  {% if record.document.ocr_failed_pages %}
+  <p class="banner error">
+    OCR failed on
+    {% if record.document.ocr_failed_pages | length == 1 %}page{% else %}pages{% endif %}
+    {{ record.document.ocr_failed_pages | join(', ') }}.
+    That text was not read. This document cannot be approved until a person reviews it.
+  </p>
+  {% endif %}
+  {% if error %}
+  <p class="banner error">{{ error }}</p>
+  {% endif %}
+  <div class="findings">
+    <h2>Rule findings</h2>
+    {% if record.findings %}
+    <ul>
+      {% for finding in record.findings %}
+      <li class="{{ finding.severity.value }}">
+        <strong>{{ finding.rule_id }}</strong>
+        <span>{{ finding.severity.value }}</span>
+        {{ finding.message }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No rule findings.</p>
+    {% endif %}
+  </div>
+</section>
+<div class="review">
+  <section class="panel fields">
+    {% for section, rows in groups %}
+    <h2>{{ section }}</h2>
+    {% for row in rows %}
+    <form class="field {{ row.css_class }}" method="post" action="/documents/{{ record.document_id }}/fields">
+      <div class="field-label">
+        <label for="value-{{ row.path | replace('.', '-') | replace('[', '-') | replace(']', '') }}">{{ row.label }}</label>
+        <span class="confidence {% if row.low_confidence %}low{% endif %}">{{ (row.confidence * 100) | round(0) | int }}%</span>
+      </div>
+      <input type="hidden" name="field_path" value="{{ row.path }}">
+      <input type="hidden" name="actor" value="" data-actor>
+      <input
+        id="value-{{ row.path | replace('.', '-') | replace('[', '-') | replace(']', '') }}"
+        name="value"
+        value="{{ row.value }}"
+        autocomplete="off"
+      >
+      <button type="submit">Save</button>
+      <p class="meta">{{ row.provenance or "No provenance" }}</p>
+      {% for message in row.messages %}
+      <p class="field-message">{{ message }}</p>
+      {% endfor %}
+    </form>
+    {% endfor %}
+    {% endfor %}
+    <h2>Override</h2>
+    <form class="field" method="post" action="/documents/{{ record.document_id }}/overrides">
+      <div class="field-label">
+        <label for="override-path">Field path</label>
+      </div>
+      <input id="override-path" name="field_path" autocomplete="off" required>
+      <input name="reason" placeholder="Reason" autocomplete="off" required>
+      <input type="hidden" name="actor" value="" data-actor>
+      <button type="submit">Override</button>
+    </form>
+    <h2>Audit log</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>When</th>
+            <th>Actor</th>
+            <th>Action</th>
+            <th>Field</th>
+            <th>Old</th>
+            <th>New</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for entry in audit_entries %}
+          <tr>
+            <td>{{ entry.created_at }}</td>
+            <td>{{ entry.actor }}</td>
+            <td>{{ entry.action }}</td>
+            <td>{{ entry.field_path or "" }}</td>
+            <td>{{ entry.old_value or "" }}</td>
+            <td>{{ entry.new_value or "" }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <aside class="panel pdf">
+    <h2>Source PDF</h2>
+    <p><a href="/documents/{{ record.document_id }}/pdf">Open PDF</a></p>
+    <img class="pdf-preview" alt="First page of {{ record.document_id }}" src="/documents/{{ record.document_id }}/preview.png">
+  </aside>
+</div>
+<script src="/static/app.js"></script>
+{% endblock %}

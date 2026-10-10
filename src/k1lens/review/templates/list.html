@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Queue · K1-Lens{% endblock %}
+{% block body %}
+<section class="panel">
+  <div class="panel-head">
+    <h1>Review queue</h1>
+    <p>{{ documents | length }} document{% if documents | length != 1 %}s{% endif %}. Low confidence is below {{ threshold_pct }}%.</p>
+  </div>
+  {% if documents %}
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Document</th>
+          <th>Year</th>
+          <th>Partnership</th>
+          <th>Partner</th>
+          <th>Variant</th>
+          <th>Status</th>
+          <th>Errors</th>
+          <th>Warnings</th>
+          <th>Low confidence</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for doc in documents %}
+        <tr>
+          <td><a href="/documents/{{ doc.document_id }}">{{ doc.document_id }}</a></td>
+          <td>{{ doc.tax_year if doc.tax_year is not none else "Not extracted" }}</td>
+          <td>{{ doc.partnership_name or "Not extracted" }}</td>
+          <td>{{ doc.partner_name or "Not extracted" }}</td>
+          <td>
+            <span class="pill">{{ doc.variant }}</span>
+            {% if not doc.layout_recognized %}
+            <span class="pill unrecognized">Unrecognized layout</span>
+            {% endif %}
+          </td>
+          <td><span class="pill status-{{ doc.status }}">{{ doc.status }}</span></td>
+          <td class="{{ 'num bad' if doc.error_count else 'num' }}">{{ doc.error_count }}</td>
+          <td class="num">{{ doc.warning_count }}</td>
+          <td class="{{ 'num bad' if doc.low_confidence_count else 'num' }}">{{ doc.low_confidence_count }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <p class="empty">The queue is empty. Generate a corpus and start the server from the repository root.</p>
+  {% endif %}
+</section>
+{% endblock %}

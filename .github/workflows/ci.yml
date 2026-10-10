@@ -1,0 +1,119 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  OMP_THREAD_LIMIT: "1"
+
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: "0.12.23"
+          python-version: "3.12"
+      - name: Cache Tesseract packages
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/apt-tesseract
+          key: tesseract-ocr-ubuntu-24.04-5.3.4
+      - name: Install Tesseract
+        run: |
+          mkdir -p "${RUNNER_TEMP}/apt-tesseract"
+          sudo apt-get update -o Dir::Cache::archives="${RUNNER_TEMP}/apt-tesseract"
+          sudo apt-get install -y --no-install-recommends \
+            -o Dir::Cache::archives="${RUNNER_TEMP}/apt-tesseract" \
+            tesseract-ocr
+          sudo chmod -R a+rX "${RUNNER_TEMP}/apt-tesseract"
+          tesseract --version
+      - name: Install dependencies
+        run: uv sync --frozen --all-groups
+      - name: Lint
+        run: uv run ruff check .
+      - name: Format
+        run: uv run ruff format --check .
+      - name: Type check
+        run: uv run mypy
+      - name: Generate fixtures from the seed
+        run: |
+          uv run k1lens generate --out fixtures/synthetic --seed 1065 --count 14
+          uv run k1lens generate --dev --out fixtures/dev --seed 1065
+          uv run k1lens generate --dev-b --out fixtures/dev_b --seed 1065
+          uv run k1lens generate --dev-geometry --out fixtures/dev_geometry --seed 1065
+      - name: Test
+        run: |
+          uv run pytest -o addopts= --cov=k1lens --cov-branch --cov-report=term-missing --cov-report=json:/tmp/coverage.json --hypothesis-seed=1065
+          uv run python -c "import json; totals=json.load(open('/tmp/coverage.json'))['totals']; lines=totals['percent_statements_covered']; branches=totals['percent_branches_covered']; print(f'line coverage {lines:.2f}%'); print(f'branch coverage {branches:.2f}%'); raise SystemExit(0 if lines + 1e-9 >= 90 else 1)"
+      - name: Eval in-distribution against the baseline
+        run: >
+          uv run k1lens eval
+          --fixtures fixtures/synthetic
+          --report /tmp/eval-in-distribution.md
+          --distribution in_distribution
+          --baseline docs/eval-baseline.json
+      - name: Eval development layouts against the baseline
+        run: >
+          uv run k1lens eval
+          --fixtures fixtures/dev
+          --report /tmp/eval-dev.md
+          --distribution dev
+          --baseline docs/eval-baseline.json
+      - name: Eval colon-free development layouts against the baseline
+        run: >
+          uv run k1lens eval
+          --fixtures fixtures/dev_geometry
+          --report /tmp/eval-dev-geometry.md
+          --distribution dev_geometry
+          --baseline docs/eval-baseline.json
+      - name: Eval fund-admin development set against the baseline
+        run: >
+          uv run k1lens eval
+          --fixtures fixtures/dev_b
+          --report /tmp/eval-dev-b.md
+          --distribution dev_b
+          --baseline docs/eval-baseline.json
+
+  scans:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v7
+        with:
+          version: "0.12.23"
+          python-version: "3.12"
+      - name: Cache Tesseract packages
+        uses: actions/cache@v4
+        with:
+          path: ${{ runner.temp }}/apt-tesseract
+          key: tesseract-ocr-ubuntu-24.04-5.3.4
+      - name: Install Tesseract
+        run: |
+          mkdir -p "${RUNNER_TEMP}/apt-tesseract"
+          sudo apt-get update -o Dir::Cache::archives="${RUNNER_TEMP}/apt-tesseract"
+          sudo apt-get install -y --no-install-recommends \
+            -o Dir::Cache::archives="${RUNNER_TEMP}/apt-tesseract" \
+            tesseract-ocr
+          sudo chmod -R a+rX "${RUNNER_TEMP}/apt-tesseract"
+          tesseract --version
+      - name: Install dependencies
+        run: uv sync --frozen --all-groups
+      - name: Generate image-only scans and check bytes
+        run: |
+          uv run k1lens generate --scans --out /tmp/k1lens-scans --seed 1065
+          uv run python -c "from pathlib import Path; from k1lens.generate.scan_hashes import require_scan_hashes; require_scan_hashes(Path('/tmp/k1lens-scans'), Path('docs/scan-hashes.json'))"
+      - name: Eval scans against the baseline
+        run: >
+          uv run k1lens eval
+          --fixtures /tmp/k1lens-scans
+          --report /tmp/eval-scans.md
+          --distribution scans
+          --baseline docs/eval-baseline.json

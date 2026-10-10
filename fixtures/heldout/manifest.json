@@ -1,0 +1,28 @@
+{
+  "seed": 1065,
+  "count": 2,
+  "generator_version": "1",
+  "synthetic_only": true,
+  "documents": [
+    {
+      "document_id": "K1-0002",
+      "variant": "clean",
+      "pdf": "K1-0002.pdf",
+      "ground_truth": "K1-0002.json",
+      "planted_defects": [],
+      "layout": "",
+      "dpi": null,
+      "degradation": ""
+    },
+    {
+      "document_id": "K1-0090",
+      "variant": "prose",
+      "pdf": "K1-0090.pdf",
+      "ground_truth": "K1-0090.json",
+      "planted_defects": [],
+      "layout": "",
+      "dpi": null,
+      "degradation": ""
+    }
+  ]
+}

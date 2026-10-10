@@ -1,0 +1,65 @@
+{
+  "in_distribution": {
+    "note": "Floors are under the headlines in docs/eval-report.md, measured with Tesseract 5.3.4 and no roster. Text-layer extraction is deterministic, so that floor is the measured rate. Rasterized accuracy is 95.4% (125/131) and precision is 99.2% (125/126). Docker uses Debian bookworm Tesseract 5.3.0. CI does not build that image. The rasterized floors sit under both versions so a one-version OCR disagreement does not fail CI, and they still fail if image-only accuracy collapses. Precision floors reject a new confident wrong number. The straight-through floor is 0.0, this run's 0/14 with no roster. Identity fields stay in review until a confident id and a full exact match lift that section to exactly the review threshold. It is a minimum and has no ceiling. A roster built from this set's ground truth cleared the four clean documents (4/14) on this measurement. Accuracy and precision floors did not move. Live model results: see docs/eval-live/report.md, measured on the pre-release source of v0.1.0 (src/ differs from the tag only in one docstring).",
+    "straight_through_rate": 0.0,
+    "text_layer_accuracy": 1.0,
+    "text_layer_precision": 1.0,
+    "rasterized_accuracy": 0.9,
+    "rasterized_precision": 0.95,
+    "overall_accuracy": 0.97,
+    "overall_precision": 0.99,
+    "ground_truth_catch_rate": 1.0,
+    "max_confident_wrong": 0
+  },
+  "dev": {
+    "note": "layout_shift reuses the catalog labels, so its floor guards the line parser. dev_statement is the inspected development wording. Its precision floor is 1 because a confident wrong number is worse than a miss. Overall is the two together. Measured overall accuracy with no roster is 68.0% (349/513). dev_statement is 35.9% (92/256). Four of those hits are the retirement-plan line, whose public caption overlaps the inspected wording. The straight-through floor is 0.0, this run's 0/8 with no roster. It is a minimum and has no ceiling. With a roster built from this set's ground truth, layout_shift was 4/4 and dev_statement stayed 0/4 because the layout is unrecognized. The four dev_statement documents miss the tax year and are unrecognized. The accuracy floor stays 0.65. The precision floor stays 1.",
+    "straight_through_rate": 0.0,
+    "overall_accuracy": 0.65,
+    "overall_precision": 1.0,
+    "variant:layout_shift": 0.99,
+    "variant:dev_statement": 0.3,
+    "variant_precision:dev_statement": 1.0,
+    "variant_precision:layout_shift": 1.0,
+    "max_confident_wrong": 0
+  },
+  "dev_b": {
+    "note": "fixtures/dev_b is a development set that was seen. The amounts are the in-distribution K1-0001 through K1-0004 records with the captions changed, set in Helvetica like the catalog. The held-out set is scored by an independent reviewer; not in this repo. Field accuracy is 98.4% (253/257) because all four tax years are missed. Precision stays 1.0. Straight-through is 0/4 because the missing tax year is a required_fields error, with a roster and without one. With no roster, field straight-through is 213/257. With a roster built from this set's ground truth it is 253/257, and document straight-through stays 0/4. The accuracy floor is that measured rate. Do not raise it by fitting the caption. A unit test locks straight-through at 0, which a floor of 0 cannot do.",
+    "overall_accuracy": 0.984,
+    "overall_precision": 1.0,
+    "straight_through_rate": 0.0,
+    "variant:dev_b": 0.984,
+    "variant_precision:dev_b": 1.0,
+    "max_confident_wrong": 0
+  },
+  "dev_geometry": {
+    "note": "fixtures/dev_geometry is a round-trip set. It prints the same catalog strings the extractor lists, from seed 1065, with no colon. It is not evidence for an unseen layout. The accuracy floor is 1.0 and the precision floor is 1.0. This run measured 100.0% (767/767) at precision 100.0% (767/767). Straight-through floor is 0. This run measured 0.0% (0/12) with no roster, because identity fields stay in review. A wide gap keeps correct amounts under 0.80. The weights were not refit. With a roster built from this set's ground truth, document straight-through was 3/12 (stacked 2/2, stacked_columns 1/2). The held-out set is scored by an independent reviewer; not in this repo. max_confident_wrong is a ceiling of 0.",
+    "overall_accuracy": 1.0,
+    "overall_precision": 1.0,
+    "straight_through_rate": 0.0,
+    "variant:face_aligned": 1.0,
+    "variant_precision:face_aligned": 1.0,
+    "variant:box_grid": 1.0,
+    "variant_precision:box_grid": 1.0,
+    "variant:two_column": 1.0,
+    "variant_precision:two_column": 1.0,
+    "variant:statement_columns": 1.0,
+    "variant_precision:statement_columns": 1.0,
+    "max_confident_wrong": 0
+  },
+  "scans": {
+    "note": "30 image-only scans generated in CI from seed 1065: 24 mild scans plus 6 catalog pages damaged on purpose (40 DPI, 20 degree skew, coffee stain, handwriting, cropped boxes, nearly blank). The PDFs are not in git. The floors are the earlier Tesseract 5.3.4 rates and were not lowered: overall 54.4% (1041/1914), precision 98.7% (1041/1055), straight-through 0/30, catalog 81.1% (408/503) precision 97.8%, dev_b 84.7% (436/515) precision 100%, dev_statement 25.6% (132/515) precision 96.4%, scan_hard 17.1% (65/381) precision 100%. This run, with no roster, measured overall 54.8% (1048/1914) at precision 98.8% (1048/1061), catalog 81.1% (408/503) at precision 97.8% (408/417), dev_statement 27.0% (139/515) at precision 97.2% (139/143), and the same dev_b and scan_hard rates. Straight-through is still 0/30. The 0.80-1.00 bucket is 596/596 with 0 errors. Distinct confidence values: 384. Expected calibration error: 0.150. OCR fields routed to review: 478/1074. Confidently read ids: 21 of 60 sections. With the ground-truth roster the 0.80-1.00 bucket is 691 comparisons at mean 0.825 with 0 errors, distinct confidence values are 385, expected calibration error is 0.135, and OCR fields routed to review are 383/1074. Straight-through is 0/30 with a roster and without one. Field straight-through is 691/1914. The known failures are inside these rates. Each floor is that earlier rate, so CI fails on a drop and does not fail because a hard page is imperfect. max_confident_wrong is 0, a ceiling. K1-SCAN-0004 withdrawals 9298 read as 298.00 and K1-SCAN-0013 withdrawals 14365 read as 44365.00 stay under 0.80 because item L was incomplete and that account takes the same penalty as one that does not tie. The digits were not rewritten. The six hard pages added none. One confident wrong value fails CI. Docker uses Tesseract 5.3.0 and is not this measurement. Straight-through floor 0 cannot fail if a later version clears a document.",
+    "min_documents": 30,
+    "overall_accuracy": 0.5438871473354232,
+    "overall_precision": 0.9867298578199052,
+    "straight_through_rate": 0.0,
+    "variant:scan_catalog": 0.8111332007952287,
+    "variant_precision:scan_catalog": 0.9784172661870504,
+    "variant:scan_dev_b": 0.8466019417475729,
+    "variant_precision:scan_dev_b": 1.0,
+    "variant:scan_dev_statement": 0.2563106796116505,
+    "variant_precision:scan_dev_statement": 0.9635036496350365,
+    "variant:scan_hard": 0.17060367454068243,
+    "variant_precision:scan_hard": 1.0,
+    "max_confident_wrong": 0
+  }
+}

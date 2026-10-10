@@ -1,0 +1,13 @@
+.venv
+.git
+.mypy_cache
+.pytest_cache
+.ruff_cache
+htmlcov
+out
+data
+fixtures/synthetic
+fixtures/dev
+fixtures/dev_b
+fixtures/dev_geometry
+fixtures/scans

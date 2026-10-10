@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}K1-Lens{% endblock %}</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <a class="brand" href="/">K1-Lens</a>
+      <p class="tag">Synthetic Schedule K-1 review</p>
+    </div>
+  </header>
+  <p class="notice">Synthetic data only. Not a tax return. Do not load real taxpayer information.</p>
+  <main>
+    {% block body %}{% endblock %}
+  </main>
+</body>
+</html>

@@ -1,0 +1,725 @@
+{
+  "synthetic_only": true,
+  "planted_defects": [],
+  "document": {
+    "document_id": "K1-0002",
+    "tax_year": 2023,
+    "synthetic": true,
+    "variant": "clean",
+    "layout_recognized": true,
+    "part_i": {
+      "ein": {
+        "value": "00-0000002",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "A Partnership EIN",
+          "extractor": "ground_truth"
+        }
+      },
+      "name": {
+        "value": "SAMPLE Redcedar Ventures LP",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "B Partnership name",
+          "extractor": "ground_truth"
+        }
+      },
+      "street": {
+        "value": "400 Pine Street",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "B Partnership street",
+          "extractor": "ground_truth"
+        }
+      },
+      "city": {
+        "value": "Portland",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "B Partnership city",
+          "extractor": "ground_truth"
+        }
+      },
+      "state": {
+        "value": "OR",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "B Partnership state",
+          "extractor": "ground_truth"
+        }
+      },
+      "zip_code": {
+        "value": "97201",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "B Partnership ZIP",
+          "extractor": "ground_truth"
+        }
+      },
+      "irs_center": {
+        "value": "Kansas City",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "C IRS center",
+          "extractor": "ground_truth"
+        }
+      },
+      "is_ptp": {
+        "value": false,
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "D PTP",
+          "extractor": "ground_truth"
+        }
+      }
+    },
+    "part_ii": {
+      "tin": {
+        "value": "000-00-0002",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "E Partner TIN",
+          "extractor": "ground_truth"
+        }
+      },
+      "name": {
+        "value": "SAMPLE Avery Quinn",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "F Partner name",
+          "extractor": "ground_truth"
+        }
+      },
+      "street": {
+        "value": "77 Lakeview Drive",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "F Partner street",
+          "extractor": "ground_truth"
+        }
+      },
+      "city": {
+        "value": "Austin",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "F Partner city",
+          "extractor": "ground_truth"
+        }
+      },
+      "state": {
+        "value": "TX",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "F Partner state",
+          "extractor": "ground_truth"
+        }
+      },
+      "zip_code": {
+        "value": "78701",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "F Partner ZIP",
+          "extractor": "ground_truth"
+        }
+      },
+      "is_general_partner": {
+        "value": false,
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "G General partner",
+          "extractor": "ground_truth"
+        }
+      },
+      "is_domestic": {
+        "value": true,
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "H1 Domestic partner",
+          "extractor": "ground_truth"
+        }
+      },
+      "entity_type": {
+        "value": "Individual",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "I1 Entity type",
+          "extractor": "ground_truth"
+        }
+      },
+      "is_retirement_plan": {
+        "value": false,
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "I2 Retirement plan",
+          "extractor": "ground_truth"
+        }
+      },
+      "profit_beginning": {
+        "value": "22",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "J Profit beginning pct",
+          "extractor": "ground_truth"
+        }
+      },
+      "profit_ending": {
+        "value": "22",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "J Profit ending pct",
+          "extractor": "ground_truth"
+        }
+      },
+      "loss_beginning": {
+        "value": "25",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "J Loss beginning pct",
+          "extractor": "ground_truth"
+        }
+      },
+      "loss_ending": {
+        "value": "25",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "J Loss ending pct",
+          "extractor": "ground_truth"
+        }
+      },
+      "capital_share_beginning": {
+        "value": "16",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "J Capital beginning pct",
+          "extractor": "ground_truth"
+        }
+      },
+      "capital_share_ending": {
+        "value": "16",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "J Capital ending pct",
+          "extractor": "ground_truth"
+        }
+      },
+      "liability_nonrecourse": {
+        "value": "3324",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "K Nonrecourse",
+          "extractor": "ground_truth"
+        }
+      },
+      "liability_qualified_nonrecourse": {
+        "value": "8687",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "K Qualified nonrecourse",
+          "extractor": "ground_truth"
+        }
+      },
+      "liability_recourse": {
+        "value": "557",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "K Recourse",
+          "extractor": "ground_truth"
+        }
+      },
+      "capital_method": {
+        "value": "Section 704(b)",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "L Capital method",
+          "extractor": "ground_truth"
+        }
+      },
+      "capital": {
+        "beginning": {
+          "value": "112984",
+          "confidence": 1.0,
+          "provenance": {
+            "page": 1,
+            "bbox": null,
+            "field_name": "L Beginning capital",
+            "extractor": "ground_truth"
+          }
+        },
+        "contributed": {
+          "value": "68776",
+          "confidence": 1.0,
+          "provenance": {
+            "page": 1,
+            "bbox": null,
+            "field_name": "L Capital contributed",
+            "extractor": "ground_truth"
+          }
+        },
+        "current_year_net_income": {
+          "value": "18299",
+          "confidence": 1.0,
+          "provenance": {
+            "page": 1,
+            "bbox": null,
+            "field_name": "L Current year net income",
+            "extractor": "ground_truth"
+          }
+        },
+        "other_increase_decrease": {
+          "value": "1638",
+          "confidence": 1.0,
+          "provenance": {
+            "page": 1,
+            "bbox": null,
+            "field_name": "L Other increase decrease",
+            "extractor": "ground_truth"
+          }
+        },
+        "withdrawals": {
+          "value": "7867",
+          "confidence": 1.0,
+          "provenance": {
+            "page": 1,
+            "bbox": null,
+            "field_name": "L Withdrawals and distributions",
+            "extractor": "ground_truth"
+          }
+        },
+        "ending": {
+          "value": "193830",
+          "confidence": 1.0,
+          "provenance": {
+            "page": 1,
+            "bbox": null,
+            "field_name": "L Ending capital",
+            "extractor": "ground_truth"
+          }
+        }
+      },
+      "contributed_builtin_gain": {
+        "value": true,
+        "confidence": 1.0,
+        "provenance": {
+          "page": 1,
+          "bbox": null,
+          "field_name": "M Built-in gain property",
+          "extractor": "ground_truth"
+        }
+      }
+    },
+    "part_iii": {
+      "ordinary_business_income": {
+        "value": "16241",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "1 Ordinary business income",
+          "extractor": "ground_truth"
+        }
+      },
+      "net_rental_real_estate": {
+        "value": "0",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "2 Net rental real estate income",
+          "extractor": "ground_truth"
+        }
+      },
+      "other_net_rental": {
+        "value": "0",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "3 Other net rental income",
+          "extractor": "ground_truth"
+        }
+      },
+      "guaranteed_payments_services": {
+        "value": "4829",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "4a Guaranteed payments for services",
+          "extractor": "ground_truth"
+        }
+      },
+      "guaranteed_payments_capital": {
+        "value": "0",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "4b Guaranteed payments for capital",
+          "extractor": "ground_truth"
+        }
+      },
+      "guaranteed_payments_total": {
+        "value": "4829",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "4c Total guaranteed payments",
+          "extractor": "ground_truth"
+        }
+      },
+      "interest_income": {
+        "value": "0",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "5 Interest income",
+          "extractor": "ground_truth"
+        }
+      },
+      "ordinary_dividends": {
+        "value": "444",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "6a Ordinary dividends",
+          "extractor": "ground_truth"
+        }
+      },
+      "qualified_dividends": {
+        "value": "167",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "6b Qualified dividends",
+          "extractor": "ground_truth"
+        }
+      },
+      "dividend_equivalents": {
+        "value": "0",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "6c Dividend equivalents",
+          "extractor": "ground_truth"
+        }
+      },
+      "royalties": {
+        "value": "0",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "7 Royalties",
+          "extractor": "ground_truth"
+        }
+      },
+      "net_short_term_capital_gain": {
+        "value": "0",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "8 Net short-term capital gain",
+          "extractor": "ground_truth"
+        }
+      },
+      "net_long_term_capital_gain": {
+        "value": "0",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "9a Net long-term capital gain",
+          "extractor": "ground_truth"
+        }
+      },
+      "collectibles_gain": {
+        "value": "0",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "9b Collectibles gain",
+          "extractor": "ground_truth"
+        }
+      },
+      "unrecaptured_1250_gain": {
+        "value": "0",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "9c Unrecaptured section 1250 gain",
+          "extractor": "ground_truth"
+        }
+      },
+      "net_section_1231_gain": {
+        "value": "0",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "10 Net section 1231 gain",
+          "extractor": "ground_truth"
+        }
+      },
+      "other_income": [
+        {
+          "code": "B",
+          "amount": {
+            "value": "1620",
+            "confidence": 1.0,
+            "provenance": {
+              "page": 2,
+              "bbox": null,
+              "field_name": "11 Other income B",
+              "extractor": "ground_truth"
+            }
+          },
+          "description": null
+        },
+        {
+          "code": "C",
+          "amount": {
+            "value": "2904",
+            "confidence": 1.0,
+            "provenance": {
+              "page": 2,
+              "bbox": null,
+              "field_name": "11 Other income C",
+              "extractor": "ground_truth"
+            }
+          },
+          "description": null
+        },
+        {
+          "code": "E",
+          "amount": {
+            "value": "678",
+            "confidence": 1.0,
+            "provenance": {
+              "page": 2,
+              "bbox": null,
+              "field_name": "11 Other income E",
+              "extractor": "ground_truth"
+            }
+          },
+          "description": null
+        }
+      ],
+      "section_179_deduction": {
+        "value": "19",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "12 Section 179 deduction",
+          "extractor": "ground_truth"
+        }
+      },
+      "other_deductions": [
+        {
+          "code": "W",
+          "amount": {
+            "value": "1710",
+            "confidence": 1.0,
+            "provenance": {
+              "page": 2,
+              "bbox": null,
+              "field_name": "13 Other deductions W",
+              "extractor": "ground_truth"
+            }
+          },
+          "description": null
+        },
+        {
+          "code": "B",
+          "amount": {
+            "value": "933",
+            "confidence": 1.0,
+            "provenance": {
+              "page": 2,
+              "bbox": null,
+              "field_name": "13 Other deductions B",
+              "extractor": "ground_truth"
+            }
+          },
+          "description": null
+        },
+        {
+          "code": "A",
+          "amount": {
+            "value": "926",
+            "confidence": 1.0,
+            "provenance": {
+              "page": 2,
+              "bbox": null,
+              "field_name": "13 Other deductions A",
+              "extractor": "ground_truth"
+            }
+          },
+          "description": null
+        }
+      ],
+      "self_employment": [],
+      "credits": [],
+      "schedule_k3_attached": {
+        "value": true,
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "16 Schedule K-3 attached",
+          "extractor": "ground_truth"
+        }
+      },
+      "amt_items": [
+        {
+          "code": "A",
+          "amount": {
+            "value": "1411",
+            "confidence": 1.0,
+            "provenance": {
+              "page": 2,
+              "bbox": null,
+              "field_name": "17 AMT items A",
+              "extractor": "ground_truth"
+            }
+          },
+          "description": null
+        },
+        {
+          "code": "C",
+          "amount": {
+            "value": "771",
+            "confidence": 1.0,
+            "provenance": {
+              "page": 2,
+              "bbox": null,
+              "field_name": "17 AMT items C",
+              "extractor": "ground_truth"
+            }
+          },
+          "description": null
+        },
+        {
+          "code": "B",
+          "amount": {
+            "value": "457",
+            "confidence": 1.0,
+            "provenance": {
+              "page": 2,
+              "bbox": null,
+              "field_name": "17 AMT items B",
+              "extractor": "ground_truth"
+            }
+          },
+          "description": null
+        }
+      ],
+      "tax_exempt_and_nondeductible": [],
+      "distributions": [
+        {
+          "code": "A",
+          "amount": {
+            "value": "6234",
+            "confidence": 1.0,
+            "provenance": {
+              "page": 2,
+              "bbox": null,
+              "field_name": "19 Distributions A",
+              "extractor": "ground_truth"
+            }
+          },
+          "description": null
+        },
+        {
+          "code": "C",
+          "amount": {
+            "value": "1633",
+            "confidence": 1.0,
+            "provenance": {
+              "page": 2,
+              "bbox": null,
+              "field_name": "19 Distributions C",
+              "extractor": "ground_truth"
+            }
+          },
+          "description": null
+        }
+      ],
+      "other_information": [],
+      "foreign_taxes_paid": {
+        "value": "0",
+        "confidence": 1.0,
+        "provenance": {
+          "page": 2,
+          "bbox": null,
+          "field_name": "21 Foreign taxes paid or accrued",
+          "extractor": "ground_truth"
+        }
+      }
+    }
+  }
+}
